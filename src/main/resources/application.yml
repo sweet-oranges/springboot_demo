@@ -4,6 +4,9 @@ http:
     enabled: true
     force: true
 
+cbs:
+    imagesPath:
+      file:/D:/img/
 server:
   port: 8888
   tomcat:
@@ -35,41 +38,34 @@ spring:
     username: root
     password: edwards
     type: com.alibaba.druid.pool.DruidDataSource
-    #    ��ʼ������
+
     initialSize: 50
-    #    ������� ��
+
     maxActive: 200
-    #    ��ȴ�ʱ��
+
     maxWait: 60000
-    #    ���ӳ��еĿ�������5���Ӻ󱻻���
-      #    ������С����
+
     minIdle: 20
-      #    ÿ��60������һ�ο������ӻ�����
+
     timeBetweenEvictionRunsMillis: 60000
     minEvictableIdleTimeMillis: 300000
-    #    ��֤ʹ�õ�sql���
+
     validationQuery: SELECT 1 FROM DUAL
-    #    ������ӱ��������ӻ��������м��飬�������ʧ�ܣ������򱻴ӳ���ȥ��
+
     testWhileIdle: true
-    #    �������ʱ������  trueΪ���ԣ��ݰٶ�˵��Ӱ�����ܣ�
+
     testOnBorrow: false
-    #   �²������Ƿ񷵻ز��Խ�������ظ����Եȣ�Ϊ�����ܲ�������
+
     testOnReturn: false
-    #    �����α꣬�Ż���ѯЧ��
+
     poolPreparedStatements: true
-    #   ���ü��ͳ�����ص�filters��ȥ�����ؽ���sql�޷�ͳ�ƣ�'wall'���ڷ���ǽ
-    #    �����������ַ�����ͨ�������ķ�ʽ������չ��������õĲ���У�
-    #    ���ͳ���õ�filter:stat��־�õ�filter:log4j����sqlע���filter:wall
+
     filters: stat,wall,log4j
-    #    ������0ʱ��poolPreparedStatements�Զ������޸�Ϊtrue��
-    #    ��Druid�У��������Oracle��PSCacheռ���ڴ��������⣬���԰������ֵ���ô�һЩ������˵100
+
     maxPoolPreparedStatementPerConnectionSize: 20
-    #    �ϲ����DruidDataSource�ļ������
+
     useGlobalDataSourceStat: true
-    #    ͨ��connectProperties��������mergeSql���ܣ���SQL��¼
-    #    ������Դ�����ӵĽ������Ŀ���ִ�в��롢���»�ɾ�����������磬��������һ�������ҵ��Ĳ�����һ�����в��롢���»�ɾ���У�
-    #    ���Զ����������ͬ������,ͨ��������������ǿ��Կ���Merge�ǹ��ڶ���������֮������ݽ��в�����
-    #    �������Ϊ�������֮�������ͬ����
+
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 #  mvc:
 #    view:
@@ -77,6 +73,6 @@ spring:
 #      suffix: .jsp
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  #      �Զ������շ�ת��
+
   configuration:
     map-underscore-to-camel-case: true
